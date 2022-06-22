@@ -24,7 +24,7 @@ function userChanged(propName: keyof User, value: string | number | null) {
         type="email"
         class="form-control"
         placeholder="user name"
-        @change="userChanged('name', ($event.target as HTMLInputElement).value)"
+        @input="userChanged('name', ($event.target as HTMLInputElement).value)"
       />
     </label>
   </div>
@@ -35,7 +35,7 @@ function userChanged(propName: keyof User, value: string | number | null) {
         :value="props.user.age"
         type="number"
         class="form-control"
-        @change="userChanged('age', +($event.target as HTMLInputElement).value)"
+        @input="userChanged('age', +($event.target as HTMLInputElement).value)"
       />
     </label>
   </div>
@@ -46,7 +46,7 @@ function userChanged(propName: keyof User, value: string | number | null) {
         :value="props.user.departmentId"
         type="number"
         class="form-control"
-        @change="
+        @input="
           userChanged(
             'departmentId',
             +($event.target as HTMLInputElement).value

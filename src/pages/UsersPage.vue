@@ -6,7 +6,7 @@ const users = ref(
     id: i + 1,
     name: `User${i + 1}`,
     age: i + 10,
-    departmentId: i + 1,
+    departmentId: (i % 4) + 1,
   }))
 )
 
