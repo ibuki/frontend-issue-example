@@ -16,7 +16,7 @@ function onSaveClicked() {
 }
 
 function onCancelClicked() {
-  router.push({ name: 'listUsers' })
+  router.push({ name: 'home' })
 }
 </script>
 

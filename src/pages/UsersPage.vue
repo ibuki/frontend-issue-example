@@ -17,7 +17,7 @@ function onDeleteClicked(userId: number) {
       <thead>
         <tr>
           <th scope="col">ユーザーID</th>
-          <th scope="col">名前</th>
+          <th scope="col">氏名</th>
           <th scope="col">年齢</th>
           <th scope="col">所属ID</th>
           <th scope="col">処理</th>

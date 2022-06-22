@@ -2,7 +2,7 @@ import { reactive } from 'vue'
 import { User } from '../models/User'
 
 const defaultUsers: User[] =
-  Array.from({ length: 20 }, (_, i) => ({
+  Array.from({ length: 100 }, (_, i) => ({
     id: i + 1,
     name: `User${i + 1}`,
     age: i + 10,
