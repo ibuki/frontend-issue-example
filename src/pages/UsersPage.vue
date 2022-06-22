@@ -1,18 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const users = ref(
-  Array.from({ length: 20 }, (_, i) => ({
-    id: i + 1,
-    name: `User${i + 1}`,
-    age: i + 10,
-    departmentId: (i % 4) + 1,
-  }))
-)
+import { store } from '../store';
 
 function onDeleteClicked(userId: number) {
   if (!confirm('削除して良いですか？')) return
-  console.log(userId)
+  const userIndex = store.users.findIndex(({id}) => id === userId)
+  store.users.splice(userIndex,1)
 }
 </script>
 <template>
@@ -32,7 +24,7 @@ function onDeleteClicked(userId: number) {
         </tr>
       </thead>
       <tbody>
-        <tr v-for="user in users" :key="user.id">
+        <tr v-for="user in store.users" :key="user.id">
           <th scope="row">{{ user.id }}</th>
           <td>{{ user.name }}</td>
           <td>{{ user.age }}</td>
